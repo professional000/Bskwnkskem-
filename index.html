@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise | ROYAL DIGITAL HUB</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #160509, #650d16, #21060c);
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 20px;
+    border: 1px solid #d6a64b;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.35);
+    box-shadow: 0 0 30px #000;
+}
+
+h1 {
+    color: #f5cb75;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ffd77d;
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.7;
+    margin: 12px 0;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: #3c0b12;
+    border: 1px solid #d6a64b;
+    border-radius: 12px;
+    padding: 15px 10px;
+    min-width: 75px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 25px;
+    color: #ffd77d;
+    font-weight: bold;
+}
+
+.time-box small {
+    font-size: 11px;
+}
+
+button {
+    border: none;
+    background: linear-gradient(45deg, #b88632, #ffe29a);
+    color: #25080c;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.04);
+}
+
+.hidden {
+    display: none;
+}
+
+.status {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.true {
+    color: #65ff9a;
+}
+
+.false {
+    color: #ff7777;
+}
+
+.wishes {
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    color: #e9c77c;
+    font-size: 12px;
+    margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- START SCREEN -->
+    <section id="startScreen">
+        <h1>🎁 BAVANI'S BIRTHDAY SURPRISE 🎁</h1>
+
+        <p>
+            A special surprise is waiting for you...
+            <br>
+            Are you ready?
+        </p>
+
+        <button onclick="startRealCountdown()">
+            Start Real Countdown ❤️
+        </button>
+
+        <button onclick="startTest()">
+            Run 10 Seconds Test 🧪
+        </button>
+    </section>
+
+
+    <!-- TEST SCREEN -->
+    <section id="testScreen" class="hidden">
+
+        <h2>🧪 Website Testing</h2>
+
+        <p>Checking Birthday Wishes Opening...</p>
+
+        <div class="countdown">
+            <div class="time-box">
+                <span id="testSeconds">10</span>
+                <small>SECONDS</small>
+            </div>
+        </div>
+
+        <p id="testMessage">Please wait...</p>
+
+        <button onclick="stopTest()">
+            Stop Test
+        </button>
+
+    </section>
+
+
+    <!-- REAL COUNTDOWN SCREEN -->
+    <section id="realScreen" class="hidden">
+
+        <h1>🎂 Coming Soon 🎂</h1>
+
+        <p>Happy Birthday BAVANI ❤️</p>
+
+        <p>December 04, 2026</p>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>DAYS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>HOURS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>SECONDS</small>
+            </div>
+
+        </div>
+
+        <p>Something beautiful is waiting for you... 💖</p>
+
+        <button onclick="startTest()">
+            Test Wishes Again 🧪
+        </button>
+
+    </section>
+
+
+    <!-- BIRTHDAY WISHES SCREEN -->
+    <section id="wishesScreen" class="hidden wishes">
+
+        <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+
+        <h2>❤️ BAVANI ❤️</h2>
+
+        <p>
+            இனிய பிறந்தநாள் வாழ்த்துக்கள்! 💐
+        </p>
+
+        <p>
+            உன்னுடைய வாழ்க்கையில் ஒவ்வொரு நாளும்
+            மகிழ்ச்சியும் அன்பும் நிறைந்ததாக இருக்கட்டும்.
+        </p>
+
+        <p>
+            உன்னுடைய எல்லா கனவுகளும் நனவாகட்டும்.
+            வாழ்க்கையில் நீ நினைக்கும் அனைத்தும்
+            உனக்குக் கிடைக்கட்டும்.
+        </p>
+
+        <p>
+            எப்போதும் சிரித்துக்கொண்டே இரு.
+            உன் வாழ்க்கை அழகான நினைவுகளால்
+            நிறைந்திருக்கட்டும். ❤️
+        </p>
+
+        <h2>Once Again, Happy Birthday! 🎂</h2>
+
+        <p>With Love ❤️</p>
+
+        <button onclick="returnToRealCountdown()">
+            Back to Real Countdown
+        </button>
+
+    </section>
+
+
+    <footer>
+        ROYAL DIGITAL HUB
+        <br>
+        Make Your Memories Unforgettable!
+    </footer>
+
+</div>
+
+
+<script>
+
+/* =====================================
+   CONFIGURATION
+===================================== */
+
+// December 04, 2026 - 12:00 AM IST
+const BIRTHDAY_DATE = new Date(
+    "2026-12-03T18:30:00Z"
+).getTime();
+
+let testInterval = null;
+let realInterval = null;
+let testTime = 10;
+
+
+/* =====================================
+   SCREEN CONTROL
+===================================== */
+
+function showScreen(screenId) {
+
+    const screens = [
+        "startScreen",
+        "testScreen",
+        "realScreen",
+        "wishesScreen"
+    ];
+
+    screens.forEach(id => {
+        document.getElementById(id)
+            .classList.add("hidden");
+    });
+
+    document.getElementById(screenId)
+        .classList.remove("hidden");
+}
+
+
+/* =====================================
+   10 SECOND TEST
+===================================== */
+
+function startTest() {
+
+    clearInterval(testInterval);
+    clearInterval(realInterval);
+
+    testTime = 10;
+
+    showScreen("testScreen");
+
+    document.getElementById("testSeconds")
+        .textContent = testTime;
+
+    document.getElementById("testMessage")
+        .textContent = "Checking... Please wait";
+
+    testInterval = setInterval(() => {
+
+        testTime--;
+
+        document.getElementById("testSeconds")
+            .textContent = testTime;
+
+        if (testTime <= 0) {
+
+            clearInterval(testInterval);
+
+            // TRUE: Test completed successfully
+            const testPassed = true;
+
+            if (testPassed) {
+
+                document.getElementById("testMessage")
+                    .textContent = "TRUE ✅ Wishes Open Successfully!";
+
+                document.getElementById("testMessage")
+                    .className = "status true";
+
+                setTimeout(() => {
+                    showScreen("wishesScreen");
+                }, 1200);
+
+            } else {
+
+                document.getElementById("testMessage")
+                    .textContent = "FALSE ❌ Wishes Not Opening";
+
+                document.getElementById("testMessage")
+                    .className = "status false";
+            }
+        }
+
+    }, 1000);
+}
+
+
+/* =====================================
+   STOP TEST
+===================================== */
+
+function stopTest() {
+
+    clearInterval(testInterval);
+
+    document.getElementById("testMessage")
+        .textContent = "FALSE ❌ Test Stopped";
+
+    document.getElementById("testMessage")
+        .className = "status false";
+
+    setTimeout(() => {
+        startRealCountdown();
+    }, 1500);
+}
+
+
+/* =====================================
+   REAL COUNTDOWN
+===================================== */
+
+function startRealCountdown() {
+
+    clearInterval(testInterval);
+    clearInterval(realInterval);
+
+    showScreen("realScreen");
+
+    updateRealCountdown();
+
+    realInterval = setInterval(
+        updateRealCountdown,
+        1000
+    );
+}
+
+
+function updateRealCountdown() {
+
+    const now = Date.now();
+
+    const difference = BIRTHDAY_DATE - now;
+
+    // Birthday reached
+    if (difference <= 0) {
+
+        clearInterval(realInterval);
+
+        showScreen("wishesScreen");
+
+        return;
+    }
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days")
+        .textContent = days;
+
+    document.getElementById("hours")
+        .textContent = hours;
+
+    document.getElementById("minutes")
+        .textContent = minutes;
+
+    document.getElementById("seconds")
+        .textContent = seconds;
+}
+
+
+/* =====================================
+   RETURN TO REAL COUNTDOWN
+===================================== */
+
+function returnToRealCountdown() {
+
+    clearInterval(testInterval);
+
+    startRealCountdown();
+}
+
+</script>
+
+</body>
+  </html>
+  
