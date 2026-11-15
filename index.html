@@ -1,472 +1,894 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Birthday Surprise | ROYAL DIGITAL HUB</title>
+<meta name="theme-color" content="#090b20">
+
+<title>Happy Birthday BAVANI.S ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #160509, #650d16, #21060c);
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+  font-family:'Poppins',sans-serif;
+  color:white;
+  overflow:hidden;
+  background:#090b20;
 }
 
-.container {
-    width: 100%;
-    max-width: 500px;
-    padding: 30px 20px;
-    border: 1px solid #d6a64b;
-    border-radius: 20px;
-    background: rgba(0,0,0,0.35);
-    box-shadow: 0 0 30px #000;
+.page {
+  display:none;
+  height:100dvh;
+  width:100%;
+  position:relative;
+  overflow-y:auto;
+  text-align:center;
+  padding:25px;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+.page.active {
+  display:flex;
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(15px)}
+  to {opacity:1; transform:translateY(0)}
+}
+
+h1,h2 {
+  font-family:'Playfair Display',serif;
 }
 
 h1 {
-    color: #f5cb75;
-    margin-bottom: 20px;
+  font-size:clamp(36px,9vw,65px);
 }
 
 h2 {
-    color: #ffd77d;
-    margin-bottom: 15px;
+  font-size:clamp(27px,7vw,40px);
+  margin-bottom:20px;
 }
 
 p {
-    line-height: 1.7;
-    margin: 12px 0;
-}
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 25px 0;
-    flex-wrap: wrap;
-}
-
-.time-box {
-    background: #3c0b12;
-    border: 1px solid #d6a64b;
-    border-radius: 12px;
-    padding: 15px 10px;
-    min-width: 75px;
-}
-
-.time-box span {
-    display: block;
-    font-size: 25px;
-    color: #ffd77d;
-    font-weight: bold;
-}
-
-.time-box small {
-    font-size: 11px;
+  line-height:1.9;
+  font-size:15px;
 }
 
 button {
-    border: none;
-    background: linear-gradient(45deg, #b88632, #ffe29a);
-    color: #25080c;
-    padding: 13px 22px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 8px;
-    cursor: pointer;
+  border:0;
+  padding:14px 28px;
+  border-radius:40px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  margin:12px;
+  transition:.3s;
 }
 
-button:hover {
-    transform: scale(1.04);
+button:active {
+  transform:scale(.94);
 }
 
-.hidden {
-    display: none;
+.gold-btn {
+  background:linear-gradient(120deg,#f5d68a,#c28c36);
+  color:#171020;
 }
 
-.status {
-    font-size: 22px;
-    font-weight: bold;
-    margin: 20px 0;
+.pink-btn {
+  background:#ffb6cc;
+  color:#6e2444;
 }
 
-.true {
-    color: #65ff9a;
+.glass {
+  background:rgba(255,255,255,.09);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:22px;
+  padding:25px;
+  width:min(100%,430px);
 }
 
-.false {
-    color: #ff7777;
+input,textarea {
+  width:100%;
+  padding:15px;
+  border:1px solid #ffffff50;
+  border-radius:12px;
+  background:#ffffff12;
+  color:white;
+  outline:none;
+  margin:10px 0;
+  font-family:inherit;
 }
 
-.wishes {
-    animation: appear 1s ease;
+input::placeholder,
+textarea::placeholder {
+  color:#ffffffa0;
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+textarea {
+  resize:vertical;
 }
 
-footer {
-    color: #e9c77c;
-    font-size: 12px;
-    margin-top: 25px;
+.small {
+  font-size:12px;
+  opacity:.7;
 }
+
+#musicBtn {
+  position:fixed;
+  top:15px;
+  right:15px;
+  z-index:99;
+  background:#ffffff20;
+  color:white;
+  padding:11px;
+  border:1px solid #ffffff50;
+}
+
+/* PAGE 1 */
+
+#page1 {
+  background:radial-gradient(circle,#24365d,#080b20 70%);
+}
+
+.star {
+  position:absolute;
+  color:#ffdc93;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  to {opacity:.2;transform:scale(1.5)}
+}
+
+/* PAGE 2 */
+
+#page2 {
+  background:linear-gradient(145deg,#090b20,#172c48,#090b20);
+}
+
+.countdown {
+  display:flex;
+  gap:10px;
+  margin:25px 0;
+}
+
+.time-box {
+  background:#ffffff12;
+  border:1px solid #e5c47a60;
+  border-radius:15px;
+  padding:13px 8px;
+  min-width:65px;
+}
+
+.time-box strong {
+  display:block;
+  font-size:25px;
+  color:#f8d88c;
+}
+
+.time-box span {
+  font-size:10px;
+}
+
+/* PAGE 3 */
+
+#page3 {
+  background:linear-gradient(145deg,#7f244b,#e77b9f,#48172f);
+}
+
+#typedText {
+  white-space:pre-line;
+  min-height:180px;
+  font-size:15px;
+}
+
+.cursor {
+  animation:blink .7s infinite;
+}
+
+@keyframes blink {
+  50% {opacity:0}
+}
+
+/* PAGE 4 */
+
+#page4 {
+  background:#050509;
+  padding:0;
+}
+
+#birthdayVideo {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:black;
+}
+
+/* PAGE 5 */
+
+#page5 {
+  background:linear-gradient(145deg,#581d49,#d47caa,#4b214d);
+}
+
+.gift {
+  font-size:120px;
+  cursor:pointer;
+  animation:giftBounce 1.5s infinite;
+}
+
+@keyframes giftBounce {
+  50% {transform:translateY(-12px) rotate(3deg)}
+}
+
+#photoReveal {
+  display:none;
+  width:min(100%,420px);
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:18px;
+  border:4px solid #f9d68d;
+  box-shadow:0 0 35px #ffcf8a90;
+  animation:fadeIn 1.2s ease;
+}
+
+/* PAGE 6 */
+
+#page6 {
+  background:linear-gradient(145deg,#30204f,#8d6ca9,#261b42);
+}
+
+.answer {
+  display:block;
+  text-align:left;
+  padding:12px;
+  border:1px solid #ffffff40;
+  border-radius:12px;
+  margin:10px 0;
+  cursor:pointer;
+}
+
+.answer input {
+  width:auto;
+  margin-right:10px;
+}
+
+#thankYou {
+  display:none;
+  margin-top:20px;
+}
+
+/* Floating hearts */
+
+.heart {
+  position:fixed;
+  bottom:-30px;
+  pointer-events:none;
+  z-index:5;
+  animation:floatUp 6s linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<button id="musicBtn" onclick="toggleMusic()">♫ Music ON</button>
 
-    <!-- START SCREEN -->
-    <section id="startScreen">
-        <h1>🎁 BAVANI'S BIRTHDAY SURPRISE 🎁</h1>
+<audio id="music" loop>
+  <source src="birthday-music.mp3" type="audio/mpeg">
+</audio>
 
-        <p>
-            A special surprise is waiting for you...
-            <br>
-            Are you ready?
-        </p>
+<!-- PAGE 1: START -->
 
-        <button onclick="startRealCountdown()">
-            Start Real Countdown ❤️
-        </button>
+<section class="page active" id="page1">
 
-        <button onclick="startTest()">
-            Run 10 Seconds Test 🧪
-        </button>
-    </section>
+  <div class="star" style="top:15%;left:15%">✦</div>
+  <div class="star" style="top:25%;right:20%">✧</div>
+  <div class="star" style="bottom:20%;left:25%">✦</div>
 
+  <p style="letter-spacing:5px;color:#f6d88d">
+    A SPECIAL SURPRISE FOR
+  </p>
 
-    <!-- TEST SCREEN -->
-    <section id="testScreen" class="hidden">
+  <h1 style="color:#f6d88d;margin:20px 0">
+    BAVANI.S
+  </h1>
 
-        <h2>🧪 Website Testing</h2>
+  <p>
+    Some moments are special.<br>
+    Some people make them unforgettable.
+  </p>
 
-        <p>Checking Birthday Wishes Opening...</p>
+  <br>
 
-        <div class="countdown">
-            <div class="time-box">
-                <span id="testSeconds">10</span>
-                <small>SECONDS</small>
-            </div>
-        </div>
+  <button class="gold-btn" onclick="startSurprise()">
+    START SURPRISE ✨
+  </button>
 
-        <p id="testMessage">Please wait...</p>
+  <p class="small">A little surprise made with love ❤️</p>
 
-        <button onclick="stopTest()">
-            Stop Test
-        </button>
-
-    </section>
+</section>
 
 
-    <!-- REAL COUNTDOWN SCREEN -->
-    <section id="realScreen" class="hidden">
+<!-- PAGE 2: COUNTDOWN -->
 
-        <h1>🎂 Coming Soon 🎂</h1>
+<section class="page" id="page2">
 
-        <p>Happy Birthday BAVANI ❤️</p>
+  <p style="letter-spacing:4px;color:#f5d68a">
+    THE SPECIAL MOMENT
+  </p>
 
-        <p>December 04, 2026</p>
+  <h2>Something Beautiful Is Waiting ❤️</h2>
 
-        <div class="countdown">
+  <p>December 04, 2026 | 12:00 AM</p>
 
-            <div class="time-box">
-                <span id="days">00</span>
-                <small>DAYS</small>
-            </div>
+  <div class="countdown">
 
-            <div class="time-box">
-                <span id="hours">00</span>
-                <small>HOURS</small>
-            </div>
+    <div class="time-box">
+      <strong id="days">00</strong>
+      <span>DAYS</span>
+    </div>
 
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <small>MINUTES</small>
-            </div>
+    <div class="time-box">
+      <strong id="hours">00</strong>
+      <span>HOURS</span>
+    </div>
 
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <small>SECONDS</small>
-            </div>
+    <div class="time-box">
+      <strong id="minutes">00</strong>
+      <span>MINUTES</span>
+    </div>
 
-        </div>
+    <div class="time-box">
+      <strong id="seconds">00</strong>
+      <span>SECONDS</span>
+    </div>
 
-        <p>Something beautiful is waiting for you... 💖</p>
+  </div>
 
-        <button onclick="startTest()">
-            Test Wishes Again 🧪
-        </button>
+  <p id="countMessage">
+    Your special surprise is waiting...
+  </p>
 
-    </section>
-
-
-    <!-- BIRTHDAY WISHES SCREEN -->
-    <section id="wishesScreen" class="hidden wishes">
-
-        <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
-
-        <h2>❤️ BAVANI ❤️</h2>
-
-        <p>
-            இனிய பிறந்தநாள் வாழ்த்துக்கள்! 💐
-        </p>
-
-        <p>
-            உன்னுடைய வாழ்க்கையில் ஒவ்வொரு நாளும்
-            மகிழ்ச்சியும் அன்பும் நிறைந்ததாக இருக்கட்டும்.
-        </p>
-
-        <p>
-            உன்னுடைய எல்லா கனவுகளும் நனவாகட்டும்.
-            வாழ்க்கையில் நீ நினைக்கும் அனைத்தும்
-            உனக்குக் கிடைக்கட்டும்.
-        </p>
-
-        <p>
-            எப்போதும் சிரித்துக்கொண்டே இரு.
-            உன் வாழ்க்கை அழகான நினைவுகளால்
-            நிறைந்திருக்கட்டும். ❤️
-        </p>
-
-        <h2>Once Again, Happy Birthday! 🎂</h2>
-
-        <p>With Love ❤️</p>
-
-        <button onclick="returnToRealCountdown()">
-            Back to Real Countdown
-        </button>
-
-    </section>
+</section>
 
 
-    <footer>
-        ROYAL DIGITAL HUB
-        <br>
-        Make Your Memories Unforgettable!
-    </footer>
+<!-- PAGE 3: PASSWORD -->
 
-</div>
+<section class="page" id="page3">
+
+  <div class="glass">
+
+    <div style="font-size:55px">🔐</div>
+
+    <h2>One Little Secret</h2>
+
+    <p>Enter the special password to unlock your surprise.</p>
+
+    <input type="password" id="password"
+      placeholder="Enter Password">
+
+    <button class="gold-btn" onclick="checkPassword()">
+      UNLOCK ❤️
+    </button>
+
+    <p id="passwordError" class="small"></p>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 4: WISHES -->
+
+<section class="page" id="page4">
+
+  <div class="glass">
+
+    <p style="color:#ffd6e5;letter-spacing:3px">
+      DECEMBER 04 • YOUR DAY
+    </p>
+
+    <h1 style="color:#ffe0e9">
+      Happy Birthday
+    </h1>
+
+    <h2>BAVANI.S ❤️</h2>
+
+    <div id="typedText"></div>
+
+    <button id="wishNext" class="pink-btn"
+      style="display:none" onclick="showPage(5)">
+      NEXT SURPRISE ✨
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 5: VIDEO -->
+
+<section class="page" id="page5">
+
+  <video id="birthdayVideo"
+    playsinline
+    controls
+    preload="metadata">
+
+    <source src="birthday-video.mp4" type="video/mp4">
+
+  </video>
+
+  <button class="pink-btn"
+    style="position:absolute;bottom:20px;right:10px"
+    onclick="showPage(6)">
+    NEXT ❤️
+  </button>
+
+</section>
+
+
+<!-- PAGE 6: GIFT PHOTO -->
+
+<section class="page" id="page6">
+
+  <p style="letter-spacing:4px">A LITTLE GIFT</p>
+
+  <h2>Open Your Gift 🎁</h2>
+
+  <p id="giftHint">Tap the gift box to reveal your surprise.</p>
+
+  <div id="giftBox" class="gift" onclick="openGift()">
+    🎁
+  </div>
+
+  <img id="photoReveal" src="gift-photo.jpg"
+    alt="A special birthday memory">
+
+  <p id="photoText" style="display:none;margin:15px">
+    A little memory, specially for you ❤️
+  </p>
+
+  <button id="photoNext" class="pink-btn"
+    style="display:none" onclick="showPage(7)">
+    ONE LAST THING 💌
+  </button>
+
+</section>
+
+
+<!-- PAGE 7: FEEDBACK -->
+
+<section class="page" id="page7">
+
+  <div class="glass">
+
+    <h2>One Last Question ❤️</h2>
+
+    <p>
+      How do you feel about this little surprise?
+    </p>
+
+    <form id="feedbackForm"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST">
+
+      <label class="answer">
+        <input type="radio" name="feeling"
+          value="Very Happy ❤️" required>
+        Very Happy ❤️
+      </label>
+
+      <label class="answer">
+        <input type="radio" name="feeling"
+          value="This is so special 🥹">
+        This is so special 🥹
+      </label>
+
+      <label class="answer">
+        <input type="radio" name="feeling"
+          value="Loved it 💗">
+        Loved it 💗
+      </label>
+
+      <label class="answer">
+        <input type="radio" name="feeling"
+          value="Beautiful surprise ✨">
+        Beautiful surprise ✨
+      </label>
+
+      <textarea name="message"
+        rows="3"
+        placeholder="Write something from your heart..."></textarea>
+
+      <input type="hidden" name="person"
+        value="BAVANI.S">
+
+      <input type="hidden" name="website"
+        value="BAVANI Birthday Surprise">
+
+      <button type="submit" class="pink-btn">
+        SEND MY FEELINGS ❤️
+      </button>
+
+    </form>
+
+    <div id="thankYou">
+      <h2>Thank You ❤️</h2>
+      <p>Your feelings mean a lot.</p>
+      <p>Stay Happy. Keep Smiling. ✨</p>
+    </div>
+
+  </div>
+
+</section>
 
 
 <script>
 
-/* =====================================
+/* ===========================
    CONFIGURATION
-===================================== */
+=========================== */
 
-// December 04, 2026 - 12:00 AM IST
-const BIRTHDAY_DATE = new Date(
-    "2026-12-03T18:30:00Z"
-).getTime();
+const CONFIG = {
 
-let testInterval = null;
-let realInterval = null;
-let testTime = 10;
+  // Birthday: India Standard Time
+  birthday: new Date("2026-12-04T00:00:00+05:30"),
+
+  // Change this password
+  password: "BAVANI123",
+
+  // Enable only while testing.
+  // MUST be false before publishing.
+  previewMode: false,
+
+  // Typing message duration
+  wishDelay: 45
+
+};
 
 
-/* =====================================
-   SCREEN CONTROL
-===================================== */
+/* ===========================
+   PAGE NAVIGATION
+=========================== */
 
-function showScreen(screenId) {
+function showPage(number) {
 
-    const screens = [
-        "startScreen",
-        "testScreen",
-        "realScreen",
-        "wishesScreen"
-    ];
+  document.querySelectorAll(".page")
+    .forEach(p => p.classList.remove("active"));
 
-    screens.forEach(id => {
-        document.getElementById(id)
-            .classList.add("hidden");
-    });
+  document.getElementById("page" + number)
+    .classList.add("active");
 
-    document.getElementById(screenId)
-        .classList.remove("hidden");
+  if(number === 4) startTyping();
+
+  if(number === 5) playBirthdayVideo();
+
+  if(number === 6) {
+    document.getElementById("giftBox").style.display = "block";
+  }
+
 }
 
 
-/* =====================================
-   10 SECOND TEST
-===================================== */
+/* ===========================
+   START + COUNTDOWN
+=========================== */
 
-function startTest() {
+function startSurprise() {
 
-    clearInterval(testInterval);
-    clearInterval(realInterval);
+  const music = document.getElementById("music");
 
-    testTime = 10;
+  music.play().then(() => {
+    document.getElementById("musicBtn").innerText = "♫ Music ON";
+  }).catch(() => {});
 
-    showScreen("testScreen");
+  showPage(2);
 
-    document.getElementById("testSeconds")
-        .textContent = testTime;
+  checkBirthday();
 
-    document.getElementById("testMessage")
-        .textContent = "Checking... Please wait";
+}
 
-    testInterval = setInterval(() => {
+function checkBirthday() {
 
-        testTime--;
+  const now = new Date();
 
-        document.getElementById("testSeconds")
-            .textContent = testTime;
+  if(CONFIG.previewMode || now >= CONFIG.birthday) {
 
-        if (testTime <= 0) {
+    document.getElementById("countMessage")
+      .innerText = "Your special moment is here ❤️";
 
-            clearInterval(testInterval);
+    showPage(3);
 
-            // TRUE: Test completed successfully
-            const testPassed = true;
+    return;
+  }
 
-            if (testPassed) {
+  const difference = CONFIG.birthday - now;
 
-                document.getElementById("testMessage")
-                    .textContent = "TRUE ✅ Wishes Open Successfully!";
+  const d = Math.floor(difference / 86400000);
+  const h = Math.floor((difference % 86400000) / 3600000);
+  const m = Math.floor((difference % 3600000) / 60000);
+  const s = Math.floor((difference % 60000) / 1000);
 
-                document.getElementById("testMessage")
-                    .className = "status true";
+  document.getElementById("days").innerText = d;
+  document.getElementById("hours").innerText = h;
+  document.getElementById("minutes").innerText = m;
+  document.getElementById("seconds").innerText = s;
 
-                setTimeout(() => {
-                    showScreen("wishesScreen");
-                }, 1200);
+}
 
-            } else {
+setInterval(() => {
 
-                document.getElementById("testMessage")
-                    .textContent = "FALSE ❌ Wishes Not Opening";
+  if(document.getElementById("page2").classList.contains("active")) {
+    checkBirthday();
+  }
 
-                document.getElementById("testMessage")
-                    .className = "status false";
-            }
+},1000);
+
+
+/* ===========================
+   PASSWORD
+=========================== */
+
+function checkPassword() {
+
+  const entered =
+    document.getElementById("password").value;
+
+  if(entered === CONFIG.password) {
+
+    document.getElementById("passwordError")
+      .innerText = "";
+
+    showPage(4);
+
+  } else {
+
+    document.getElementById("passwordError")
+      .innerText = "Incorrect password. Try again ❤️";
+
+    document.getElementById("password")
+      .value = "";
+
+  }
+
+}
+
+
+/* ===========================
+   AUTOMATIC TYPING WISHES
+=========================== */
+
+const birthdayMessage = `On your special day, I wish you endless happiness, beautiful memories and countless reasons to smile.
+
+May every dream you carry in your heart come true.
+
+உன் வாழ்க்கையில் எப்போதும் மகிழ்ச்சி நிறைந்திருக்கட்டும்.
+
+ஒவ்வொரு நாளும் புதிய நம்பிக்கையும் அழகான நினைவுகளும் உன்னைத் தேடி வரட்டும்.
+
+Keep smiling, keep shining and always be happy.
+
+You deserve all the beautiful things in life.
+
+Once again, Happy Birthday BAVANI.S! ❤️✨`;
+
+let typingStarted = false;
+
+function startTyping() {
+
+  if(typingStarted) return;
+
+  typingStarted = true;
+
+  const output = document.getElementById("typedText");
+
+  let index = 0;
+
+  function type() {
+
+    if(index < birthdayMessage.length) {
+
+      output.textContent += birthdayMessage[index];
+
+      index++;
+
+      setTimeout(type, CONFIG.wishDelay);
+
+    } else {
+
+      document.getElementById("wishNext")
+        .style.display = "inline-block";
+
+      setTimeout(() => {
+
+        if(document.getElementById("page4").classList.contains("active")) {
+          showPage(5);
         }
 
-    }, 1000);
-}
+      },30000);
 
-
-/* =====================================
-   STOP TEST
-===================================== */
-
-function stopTest() {
-
-    clearInterval(testInterval);
-
-    document.getElementById("testMessage")
-        .textContent = "FALSE ❌ Test Stopped";
-
-    document.getElementById("testMessage")
-        .className = "status false";
-
-    setTimeout(() => {
-        startRealCountdown();
-    }, 1500);
-}
-
-
-/* =====================================
-   REAL COUNTDOWN
-===================================== */
-
-function startRealCountdown() {
-
-    clearInterval(testInterval);
-    clearInterval(realInterval);
-
-    showScreen("realScreen");
-
-    updateRealCountdown();
-
-    realInterval = setInterval(
-        updateRealCountdown,
-        1000
-    );
-}
-
-
-function updateRealCountdown() {
-
-    const now = Date.now();
-
-    const difference = BIRTHDAY_DATE - now;
-
-    // Birthday reached
-    if (difference <= 0) {
-
-        clearInterval(realInterval);
-
-        showScreen("wishesScreen");
-
-        return;
     }
 
-    const days = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
-    );
+  }
 
-    const hours = Math.floor(
-        (difference / (1000 * 60 * 60)) % 24
-    );
+  type();
 
-    const minutes = Math.floor(
-        (difference / (1000 * 60)) % 60
-    );
-
-    const seconds = Math.floor(
-        (difference / 1000) % 60
-    );
-
-    document.getElementById("days")
-        .textContent = days;
-
-    document.getElementById("hours")
-        .textContent = hours;
-
-    document.getElementById("minutes")
-        .textContent = minutes;
-
-    document.getElementById("seconds")
-        .textContent = seconds;
 }
 
 
-/* =====================================
-   RETURN TO REAL COUNTDOWN
-===================================== */
+/* ===========================
+   VIDEO
+=========================== */
 
-function returnToRealCountdown() {
+function playBirthdayVideo() {
 
-    clearInterval(testInterval);
+  const video = document.getElementById("birthdayVideo");
 
-    startRealCountdown();
+  video.currentTime = 0;
+
+  video.play().catch(() => {
+    // If browser blocks autoplay,
+    // user can tap the video play button.
+  });
+
 }
+
+
+/* ===========================
+   GIFT BOX
+=========================== */
+
+let giftOpened = false;
+
+function openGift() {
+
+  if(giftOpened) return;
+
+  giftOpened = true;
+
+  document.getElementById("giftBox").innerText = "✨💝✨";
+
+  document.getElementById("giftBox").style.display = "none";
+
+  document.getElementById("giftHint").innerText =
+    "A special memory, just for you ❤️";
+
+  document.getElementById("photoReveal").style.display = "block";
+
+  document.getElementById("photoText").style.display = "block";
+
+  document.getElementById("photoNext").style.display = "inline-block";
+
+}
+
+
+/* ===========================
+   FEEDBACK SUBMISSION
+=========================== */
+
+document.getElementById("feedbackForm")
+.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  const form = e.target;
+
+  if(form.action.includes("YOUR_FORM_ID")) {
+    alert("Please configure your Formspree endpoint first.");
+    return;
+  }
+
+  try {
+
+    const response = await fetch(form.action, {
+      method:"POST",
+      body:new FormData(form),
+      headers: {
+        "Accept":"application/json"
+      }
+    });
+
+    if(response.ok) {
+
+      form.style.display = "none";
+
+      document.getElementById("thankYou")
+        .style.display = "block";
+
+    } else {
+
+      alert("Unable to send. Please try again.");
+
+    }
+
+  } catch(error) {
+
+    alert("Internet connection required to send your response.");
+
+  }
+
+});
+
+
+/* ===========================
+   BACKGROUND MUSIC
+=========================== */
+
+function toggleMusic() {
+
+  const music = document.getElementById("music");
+
+  if(music.paused) {
+
+    music.play().catch(() => {});
+
+    document.getElementById("musicBtn").innerText = "♫ Music ON";
+
+  } else {
+
+    music.pause();
+
+    document.getElementById("musicBtn").innerText = "♫ Music OFF";
+
+  }
+
+}
+
+
+/* ===========================
+   FLOATING HEART EFFECT
+=========================== */
+
+setInterval(() => {
+
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+
+  heart.innerText = ["❤️","💕","💗","✨","🌹"][
+    Math.floor(Math.random()*5)
+  ];
+
+  heart.style.left = Math.random()*100 + "vw";
+
+  heart.style.fontSize = (15 + Math.random()*20) + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(),6000);
+
+},700);
+
+
+/* ===========================
+   INITIAL CHECK
+=========================== */
+
+// Never unlock before the birthday.
+// Countdown starts only after clicking Start.
 
 </script>
 
 </body>
-  </html>
-  
+</html>
