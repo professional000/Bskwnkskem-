@@ -8,9 +8,11 @@
 
 <title>Happy Birthday BAVANI.S ❤️</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 * {
   margin:0;
   padding:0;
@@ -19,22 +21,22 @@
 
 body {
   font-family:'Poppins',sans-serif;
+  background:#090b20;
   color:white;
   overflow:hidden;
-  background:#090b20;
 }
 
 .page {
   display:none;
-  height:100dvh;
   width:100%;
-  position:relative;
+  height:100dvh;
   overflow-y:auto;
-  text-align:center;
   padding:25px;
   align-items:center;
   justify-content:center;
   flex-direction:column;
+  text-align:center;
+  position:relative;
 }
 
 .page.active {
@@ -43,8 +45,8 @@ body {
 }
 
 @keyframes fadeIn {
-  from {opacity:0; transform:translateY(15px)}
-  to {opacity:1; transform:translateY(0)}
+  from {opacity:0;transform:translateY(18px)}
+  to {opacity:1;transform:translateY(0)}
 }
 
 h1,h2 {
@@ -52,12 +54,12 @@ h1,h2 {
 }
 
 h1 {
-  font-size:clamp(36px,9vw,65px);
+  font-size:clamp(38px,9vw,65px);
 }
 
 h2 {
   font-size:clamp(27px,7vw,40px);
-  margin-bottom:20px;
+  margin:15px 0;
 }
 
 p {
@@ -66,54 +68,54 @@ p {
 }
 
 button {
+  padding:14px 26px;
   border:0;
-  padding:14px 28px;
   border-radius:40px;
-  font-size:15px;
+  font-family:inherit;
+  font-size:14px;
   font-weight:600;
   cursor:pointer;
-  margin:12px;
-  transition:.3s;
+  margin:10px;
 }
 
 button:active {
-  transform:scale(.94);
+  transform:scale(.95);
 }
 
 .gold-btn {
-  background:linear-gradient(120deg,#f5d68a,#c28c36);
-  color:#171020;
+  background:linear-gradient(120deg,#ffe6a5,#c28c36);
+  color:#251a0b;
 }
 
 .pink-btn {
-  background:#ffb6cc;
-  color:#6e2444;
+  background:linear-gradient(120deg,#ffc1d8,#e77ca6);
+  color:#641b40;
 }
 
 .glass {
-  background:rgba(255,255,255,.09);
-  backdrop-filter:blur(15px);
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:22px;
-  padding:25px;
   width:min(100%,430px);
+  padding:25px;
+  background:#ffffff12;
+  border:1px solid #ffffff35;
+  border-radius:22px;
+  backdrop-filter:blur(15px);
 }
 
 input,textarea {
   width:100%;
   padding:15px;
-  border:1px solid #ffffff50;
+  border:1px solid #ffffff40;
   border-radius:12px;
   background:#ffffff12;
   color:white;
-  outline:none;
-  margin:10px 0;
   font-family:inherit;
+  margin:10px 0;
+  outline:none;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color:#ffffffa0;
+  color:#ffffff90;
 }
 
 textarea {
@@ -127,24 +129,24 @@ textarea {
 
 #musicBtn {
   position:fixed;
-  top:15px;
-  right:15px;
-  z-index:99;
+  z-index:100;
+  top:12px;
+  right:12px;
+  padding:10px 15px;
   background:#ffffff20;
-  color:white;
-  padding:11px;
   border:1px solid #ffffff50;
+  color:white;
 }
 
 /* PAGE 1 */
 
 #page1 {
-  background:radial-gradient(circle,#24365d,#080b20 70%);
+  background:radial-gradient(circle,#263b66,#080b20 75%);
 }
 
 .star {
   position:absolute;
-  color:#ffdc93;
+  color:#ffe3a2;
   animation:twinkle 2s infinite alternate;
 }
 
@@ -155,21 +157,21 @@ textarea {
 /* PAGE 2 */
 
 #page2 {
-  background:linear-gradient(145deg,#090b20,#172c48,#090b20);
+  background:linear-gradient(145deg,#090b20,#19334f,#090b20);
 }
 
 .countdown {
   display:flex;
-  gap:10px;
+  gap:8px;
   margin:25px 0;
 }
 
 .time-box {
-  background:#ffffff12;
-  border:1px solid #e5c47a60;
-  border-radius:15px;
-  padding:13px 8px;
   min-width:65px;
+  padding:13px 7px;
+  border:1px solid #e5c47a70;
+  border-radius:14px;
+  background:#ffffff12;
 }
 
 .time-box strong {
@@ -185,50 +187,81 @@ textarea {
 /* PAGE 3 */
 
 #page3 {
+  background:linear-gradient(145deg,#080b20,#283452,#080b20);
+}
+
+#passwordError {
+  color:#ff9db9;
+}
+
+/* PAGE 4 */
+
+#page4 {
   background:linear-gradient(145deg,#7f244b,#e77b9f,#48172f);
 }
 
 #typedText {
   white-space:pre-line;
   min-height:180px;
-  font-size:15px;
+  font-size:14px;
+  line-height:2;
 }
 
-.cursor {
-  animation:blink .7s infinite;
-}
+/* PAGE 5 VIDEO */
 
-@keyframes blink {
-  50% {opacity:0}
-}
-
-/* PAGE 4 */
-
-#page4 {
-  background:#050509;
+#page5 {
+  background:#000;
   padding:0;
+  overflow:hidden;
 }
 
 #birthdayVideo {
   width:100%;
   height:100%;
   object-fit:contain;
-  background:black;
+  background:#000;
 }
 
-/* PAGE 5 */
+.video-overlay {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  pointer-events:none;
+}
 
-#page5 {
+.video-overlay button {
+  pointer-events:auto;
+}
+
+#soundBtn {
+  background:#ffffff25;
+  border:1px solid #ffffff80;
+  color:white;
+}
+
+#videoNext {
+  position:absolute;
+  bottom:18px;
+  right:10px;
+  z-index:10;
+}
+
+/* PAGE 6 GIFT */
+
+#page6 {
   background:linear-gradient(145deg,#581d49,#d47caa,#4b214d);
 }
 
 .gift {
   font-size:120px;
   cursor:pointer;
-  animation:giftBounce 1.5s infinite;
+  animation:bounce 1.5s infinite;
 }
 
-@keyframes giftBounce {
+@keyframes bounce {
   50% {transform:translateY(-12px) rotate(3deg)}
 }
 
@@ -237,22 +270,23 @@ textarea {
   width:min(100%,420px);
   aspect-ratio:4/3;
   object-fit:cover;
-  border-radius:18px;
   border:4px solid #f9d68d;
+  border-radius:18px;
   box-shadow:0 0 35px #ffcf8a90;
-  animation:fadeIn 1.2s ease;
 }
 
-/* PAGE 6 */
+/* PAGE 7 FEEDBACK */
 
-#page6 {
+#page7 {
   background:linear-gradient(145deg,#30204f,#8d6ca9,#261b42);
 }
 
 .answer {
-  display:block;
+  display:flex;
+  align-items:center;
   text-align:left;
-  padding:12px;
+  gap:10px;
+  padding:13px;
   border:1px solid #ffffff40;
   border-radius:12px;
   margin:10px 0;
@@ -260,16 +294,17 @@ textarea {
 }
 
 .answer input {
-  width:auto;
-  margin-right:10px;
+  width:18px;
+  margin:0;
+  accent-color:#ff9fc8;
 }
 
 #thankYou {
   display:none;
-  margin-top:20px;
+  padding:15px;
 }
 
-/* Floating hearts */
+/* HEARTS */
 
 .heart {
   position:fixed;
@@ -291,13 +326,16 @@ textarea {
 
 <body>
 
-<button id="musicBtn" onclick="toggleMusic()">♫ Music ON</button>
+<button id="musicBtn" onclick="toggleMusic()">
+♫ MUSIC ON
+</button>
 
 <audio id="music" loop>
-  <source src="birthday-music.mp3" type="audio/mpeg">
+  <source src="./birthday-music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- PAGE 1: START -->
+
+<!-- PAGE 1: WELCOME -->
 
 <section class="page active" id="page1">
 
@@ -318,13 +356,11 @@ textarea {
     Some people make them unforgettable.
   </p>
 
-  <br>
-
   <button class="gold-btn" onclick="startSurprise()">
     START SURPRISE ✨
   </button>
 
-  <p class="small">A little surprise made with love ❤️</p>
+  <p class="small">Made with love ❤️</p>
 
 </section>
 
@@ -384,21 +420,25 @@ textarea {
 
     <p>Enter the special password to unlock your surprise.</p>
 
-    <input type="password" id="password"
-      placeholder="Enter Password">
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter Password"
+      autocomplete="off"
+    >
 
     <button class="gold-btn" onclick="checkPassword()">
       UNLOCK ❤️
     </button>
 
-    <p id="passwordError" class="small"></p>
+    <p id="passwordError"></p>
 
   </div>
 
 </section>
 
 
-<!-- PAGE 4: WISHES -->
+<!-- PAGE 4: BIRTHDAY WISHES -->
 
 <section class="page" id="page4">
 
@@ -416,9 +456,13 @@ textarea {
 
     <div id="typedText"></div>
 
-    <button id="wishNext" class="pink-btn"
-      style="display:none" onclick="showPage(5)">
-      NEXT SURPRISE ✨
+    <button
+      id="wishNext"
+      class="pink-btn"
+      style="display:none"
+      onclick="showPage(5)"
+    >
+      WATCH YOUR SURPRISE ✨
     </button>
 
   </div>
@@ -430,47 +474,75 @@ textarea {
 
 <section class="page" id="page5">
 
-  <video id="birthdayVideo"
+  <video
+    id="birthdayVideo"
     playsinline
+    webkit-playsinline
     controls
-    preload="metadata">
-
-    <source src="birthday-video.mp4" type="video/mp4">
-
+    preload="auto"
+    poster=""
+  >
+    <source src="./birthday-video.mp4" type="video/mp4">
+    Your browser does not support this video.
   </video>
 
-  <button class="pink-btn"
-    style="position:absolute;bottom:20px;right:10px"
-    onclick="showPage(6)">
-    NEXT ❤️
+  <div class="video-overlay" id="videoOverlay">
+
+    <p id="videoMessage">
+      A special video for you ❤️
+    </p>
+
+    <button id="soundBtn" onclick="enableVideoSound()">
+      🔊 PLAY WITH SOUND
+    </button>
+
+  </div>
+
+  <button
+    id="videoNext"
+    class="pink-btn"
+    onclick="goToGift()"
+  >
+    NEXT SURPRISE ❤️
   </button>
 
 </section>
 
 
-<!-- PAGE 6: GIFT PHOTO -->
+<!-- PAGE 6: GIFT -->
 
 <section class="page" id="page6">
 
-  <p style="letter-spacing:4px">A LITTLE GIFT</p>
+  <p style="letter-spacing:4px">
+    A LITTLE GIFT
+  </p>
 
   <h2>Open Your Gift 🎁</h2>
 
-  <p id="giftHint">Tap the gift box to reveal your surprise.</p>
+  <p id="giftHint">
+    Tap the gift box to reveal your surprise.
+  </p>
 
   <div id="giftBox" class="gift" onclick="openGift()">
     🎁
   </div>
 
-  <img id="photoReveal" src="gift-photo.jpg"
-    alt="A special birthday memory">
+  <img
+    id="photoReveal"
+    src="./gift-photo.jpg"
+    alt="A special birthday memory"
+  >
 
   <p id="photoText" style="display:none;margin:15px">
     A little memory, specially for you ❤️
   </p>
 
-  <button id="photoNext" class="pink-btn"
-    style="display:none" onclick="showPage(7)">
+  <button
+    id="photoNext"
+    class="pink-btn"
+    style="display:none"
+    onclick="showPage(7)"
+  >
     ONE LAST THING 💌
   </button>
 
@@ -485,13 +557,13 @@ textarea {
 
     <h2>One Last Question ❤️</h2>
 
-    <p>
-      How do you feel about this little surprise?
-    </p>
+    <p>How do you feel about this little surprise?</p>
 
-    <form id="feedbackForm"
-      action="https://formspree.io/f/YOUR_FORM_ID"
-      method="POST">
+    <form
+      id="feedbackForm"
+      action="https://formspree.io/f/xzepljrz"
+      method="POST"
+    >
 
       <label class="answer">
         <input type="radio" name="feeling"
@@ -517,27 +589,34 @@ textarea {
         Beautiful surprise ✨
       </label>
 
-      <textarea name="message"
+      <textarea
+        name="message"
         rows="3"
-        placeholder="Write something from your heart..."></textarea>
+        placeholder="Write something from your heart..."
+      ></textarea>
 
-      <input type="hidden" name="person"
-        value="BAVANI.S">
+      <input type="hidden" name="person" value="BAVANI.S">
 
       <input type="hidden" name="website"
         value="BAVANI Birthday Surprise">
 
-      <button type="submit" class="pink-btn">
+      <button type="submit" class="pink-btn" id="submitBtn">
         SEND MY FEELINGS ❤️
       </button>
 
     </form>
 
     <div id="thankYou">
+
       <h2>Thank You ❤️</h2>
+
       <p>Your feelings mean a lot.</p>
+
       <p>Stay Happy. Keep Smiling. ✨</p>
+
     </div>
+
+    <p id="formStatus" class="small"></p>
 
   </div>
 
@@ -546,62 +625,67 @@ textarea {
 
 <script>
 
-/* ===========================
+/* =================================
    CONFIGURATION
-=========================== */
+================================= */
 
 const CONFIG = {
 
-  // Birthday: India Standard Time
   birthday: new Date("2026-12-04T00:00:00+05:30"),
 
-  // Change this password
   password: "BAVANI123",
 
-  // Enable only while testing.
-  // MUST be false before publishing.
-  previewMode: true,
+  // TEST ONLY: set true to test before birthday.
+  // Change back to false before publishing.
+  previewMode: false,
 
-  // Typing message duration
-  wishDelay: 45
+  wishDelay: 45,
+
+  autoVideoAfter: 30000
 
 };
 
 
-/* ===========================
+/* =================================
    PAGE NAVIGATION
-=========================== */
+================================= */
 
 function showPage(number) {
 
   document.querySelectorAll(".page")
-    .forEach(p => p.classList.remove("active"));
+    .forEach(page => page.classList.remove("active"));
 
   document.getElementById("page" + number)
     .classList.add("active");
 
-  if(number === 4) startTyping();
+  if(number === 4) {
+    startTyping();
+  }
 
-  if(number === 5) playBirthdayVideo();
-
-  if(number === 6) {
-    document.getElementById("giftBox").style.display = "block";
+  if(number === 5) {
+    playBirthdayVideo();
   }
 
 }
 
 
-/* ===========================
+/* =================================
    START + COUNTDOWN
-=========================== */
+================================= */
 
 function startSurprise() {
 
   const music = document.getElementById("music");
 
   music.play().then(() => {
-    document.getElementById("musicBtn").innerText = "♫ Music ON";
-  }).catch(() => {});
+
+    document.getElementById("musicBtn").innerText = "♫ MUSIC ON";
+
+  }).catch(() => {
+
+    document.getElementById("musicBtn").innerText = "♫ TAP MUSIC";
+
+  });
 
   showPage(2);
 
@@ -609,46 +693,57 @@ function startSurprise() {
 
 }
 
+
 function checkBirthday() {
 
   const now = new Date();
 
   if(CONFIG.previewMode || now >= CONFIG.birthday) {
 
-    document.getElementById("countMessage")
-      .innerText = "Your special moment is here ❤️";
+    document.getElementById("countMessage").innerText =
+      "Your special moment is here ❤️";
 
     showPage(3);
 
     return;
+
   }
 
   const difference = CONFIG.birthday - now;
 
   const d = Math.floor(difference / 86400000);
+
   const h = Math.floor((difference % 86400000) / 3600000);
+
   const m = Math.floor((difference % 3600000) / 60000);
+
   const s = Math.floor((difference % 60000) / 1000);
 
   document.getElementById("days").innerText = d;
+
   document.getElementById("hours").innerText = h;
+
   document.getElementById("minutes").innerText = m;
+
   document.getElementById("seconds").innerText = s;
 
 }
 
+
 setInterval(() => {
 
   if(document.getElementById("page2").classList.contains("active")) {
+
     checkBirthday();
+
   }
 
 },1000);
 
 
-/* ===========================
+/* =================================
    PASSWORD
-=========================== */
+================================= */
 
 function checkPassword() {
 
@@ -657,27 +752,25 @@ function checkPassword() {
 
   if(entered === CONFIG.password) {
 
-    document.getElementById("passwordError")
-      .innerText = "";
+    document.getElementById("passwordError").innerText = "";
 
     showPage(4);
 
   } else {
 
-    document.getElementById("passwordError")
-      .innerText = "Incorrect password. Try again ❤️";
+    document.getElementById("passwordError").innerText =
+      "Incorrect password. Try again ❤️";
 
-    document.getElementById("password")
-      .value = "";
+    document.getElementById("password").value = "";
 
   }
 
 }
 
 
-/* ===========================
-   AUTOMATIC TYPING WISHES
-=========================== */
+/* =================================
+   TYPING WISHES
+================================= */
 
 const birthdayMessage = `On your special day, I wish you endless happiness, beautiful memories and countless reasons to smile.
 
@@ -692,6 +785,7 @@ Keep smiling, keep shining and always be happy.
 You deserve all the beautiful things in life.
 
 Once again, Happy Birthday BAVANI.S! ❤️✨`;
+
 
 let typingStarted = false;
 
@@ -713,7 +807,7 @@ function startTyping() {
 
       index++;
 
-      setTimeout(type, CONFIG.wishDelay);
+      setTimeout(type,CONFIG.wishDelay);
 
     } else {
 
@@ -723,10 +817,12 @@ function startTyping() {
       setTimeout(() => {
 
         if(document.getElementById("page4").classList.contains("active")) {
+
           showPage(5);
+
         }
 
-      },30000);
+      },CONFIG.autoVideoAfter);
 
     }
 
@@ -737,27 +833,102 @@ function startTyping() {
 }
 
 
-/* ===========================
-   VIDEO
-=========================== */
+/* =================================
+   VIDEO PLAYBACK
+================================= */
+
+const video = document.getElementById("birthdayVideo");
 
 function playBirthdayVideo() {
 
-  const video = document.getElementById("birthdayVideo");
+  const music = document.getElementById("music");
+
+  // Stop background music during video.
+  music.pause();
+
+  video.pause();
 
   video.currentTime = 0;
 
-  video.play().catch(() => {
-    // If browser blocks autoplay,
-    // user can tap the video play button.
+  // Muted autoplay is more compatible with mobile browsers.
+  video.muted = true;
+
+  document.getElementById("videoOverlay").style.display = "flex";
+
+  document.getElementById("videoMessage").innerText =
+    "Your special video is ready ❤️";
+
+  video.play().then(() => {
+
+    document.getElementById("videoOverlay").style.display = "none";
+
+    document.getElementById("soundBtn").style.display = "block";
+
+  }).catch(error => {
+
+    console.log("Autoplay blocked:",error);
+
+    document.getElementById("videoOverlay").style.display = "flex";
+
+    document.getElementById("videoMessage").innerText =
+      "Tap below to play your video ❤️";
+
   });
 
 }
 
 
-/* ===========================
-   GIFT BOX
-=========================== */
+function enableVideoSound() {
+
+  if(video.paused) {
+
+    video.play().catch(error => {
+      console.log(error);
+    });
+
+  }
+
+  video.muted = false;
+
+  video.volume = 1;
+
+  document.getElementById("videoOverlay").style.display = "none";
+
+}
+
+
+video.addEventListener("error",() => {
+
+  document.getElementById("videoOverlay").style.display = "flex";
+
+  document.getElementById("videoMessage").innerText =
+    "Video could not load. Please check the video file.";
+
+});
+
+
+video.addEventListener("ended",() => {
+
+  document.getElementById("videoMessage").innerText =
+    "Hope you enjoyed your surprise ❤️";
+
+  document.getElementById("videoOverlay").style.display = "flex";
+
+});
+
+
+function goToGift() {
+
+  video.pause();
+
+  showPage(6);
+
+}
+
+
+/* =================================
+   GIFT PHOTO
+================================= */
 
 let giftOpened = false;
 
@@ -766,8 +937,6 @@ function openGift() {
   if(giftOpened) return;
 
   giftOpened = true;
-
-  document.getElementById("giftBox").innerText = "✨💝✨";
 
   document.getElementById("giftBox").style.display = "none";
 
@@ -783,57 +952,81 @@ function openGift() {
 }
 
 
-/* ===========================
-   FEEDBACK SUBMISSION
-=========================== */
+/* =================================
+   FORMSPREE FEEDBACK
+================================= */
 
-document.getElementById("feedbackForm")
-.addEventListener("submit", async function(e) {
+const feedbackForm =
+  document.getElementById("feedbackForm");
+
+
+feedbackForm.addEventListener("submit",async function(e) {
 
   e.preventDefault();
 
-  const form = e.target;
+  const submitBtn = document.getElementById("submitBtn");
 
-  if(form.action.includes("YOUR_FORM_ID")) {
-    alert("Please configure your Formspree endpoint first.");
-    return;
-  }
+  const status = document.getElementById("formStatus");
+
+  submitBtn.disabled = true;
+
+  submitBtn.innerText = "SENDING...";
+
+  status.innerText = "";
 
   try {
 
-    const response = await fetch(form.action, {
+    const response = await fetch(feedbackForm.action, {
+
       method:"POST",
-      body:new FormData(form),
+
+      body:new FormData(feedbackForm),
+
       headers: {
         "Accept":"application/json"
       }
+
     });
 
     if(response.ok) {
 
-      form.style.display = "none";
+      feedbackForm.style.display = "none";
 
-      document.getElementById("thankYou")
-        .style.display = "block";
+      document.getElementById("thankYou").style.display = "block";
+
+      status.innerText = "Your response has been sent successfully ❤️";
 
     } else {
 
-      alert("Unable to send. Please try again.");
+      const result = await response.json().catch(() => ({}));
+
+      status.innerText =
+        result.errors?.map(error => error.message).join(", ") ||
+        "Unable to send. Please try again.";
+
+      submitBtn.disabled = false;
+
+      submitBtn.innerText = "TRY AGAIN ❤️";
 
     }
 
   } catch(error) {
 
-    alert("Internet connection required to send your response.");
+    status.innerText =
+      "Internet connection error. Please try again.";
+
+    submitBtn.disabled = false;
+
+    submitBtn.innerText = "TRY AGAIN ❤️";
 
   }
 
 });
 
 
-/* ===========================
+/* =================================
    BACKGROUND MUSIC
-=========================== */
+================================= */
 
 function toggleMusic() {
 
@@ -841,24 +1034,30 @@ function toggleMusic() {
 
   if(music.paused) {
 
-    music.play().catch(() => {});
+    music.play().then(() => {
 
-    document.getElementById("musicBtn").innerText = "♫ Music ON";
+      document.getElementById("musicBtn").innerText = "♫ MUSIC ON";
+
+    }).catch(() => {
+
+      document.getElementById("musicBtn").innerText = "♫ TAP AGAIN";
+
+    });
 
   } else {
 
     music.pause();
 
-    document.getElementById("musicBtn").innerText = "♫ Music OFF";
+    document.getElementById("musicBtn").innerText = "♫ MUSIC OFF";
 
   }
 
 }
 
 
-/* ===========================
-   FLOATING HEART EFFECT
-=========================== */
+/* =================================
+   FLOATING HEARTS
+================================= */
 
 setInterval(() => {
 
@@ -872,7 +1071,8 @@ setInterval(() => {
 
   heart.style.left = Math.random()*100 + "vw";
 
-  heart.style.fontSize = (15 + Math.random()*20) + "px";
+  heart.style.fontSize =
+    (15 + Math.random()*20) + "px";
 
   document.body.appendChild(heart);
 
@@ -881,12 +1081,11 @@ setInterval(() => {
 },700);
 
 
-/* ===========================
-   INITIAL CHECK
-=========================== */
+/* =================================
+   INITIAL STATE
+================================= */
 
-// Never unlock before the birthday.
-// Countdown starts only after clicking Start.
+document.getElementById("musicBtn").innerText = "♫ MUSIC ON";
 
 </script>
 
